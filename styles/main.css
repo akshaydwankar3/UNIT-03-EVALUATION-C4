@@ -1,0 +1,22 @@
+
+#container{
+    display: flex;
+    /* height: 500px; */
+    /* font-size: 30px; */
+}
+
+#sidebar{
+    flex: 3;
+}
+
+#main{
+    flex: 7;
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    grid-gap : 3%;
+}
+
+#images{
+    width:250px;
+    height: 250px;
+}

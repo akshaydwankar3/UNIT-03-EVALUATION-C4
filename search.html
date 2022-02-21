@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search_Items</title>
+  </head>
+
+  <style>
+    #main{
+    flex: 7;
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    grid-gap : 3%;
+  }
+
+  #images{
+      width:200px;
+      height: 200px;
+  }
+  </style>
+
+  <body>
+    <div id="main">
+      <!--No need to add sidebar here, directly display search results here only-->
+
+      <!-- show headline, description and image -->
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  import {apiCall,appendArticles} from "./scripts/main.js";
+
+  
+  let call = JSON.parse(localStorage.getItem("Search_Items"));
+
+  let url = `https://shrouded-earth-23381.herokuapp.com/api=${call}/headlines/india`;
+  
+  let articles = apiCall(url);
+  console.log("articles:",articles);
+
+  let main = document.getElementById('main');
+
+  appendArticles(articles,main);
+// let data = JSON.parse(localStorage.getItem('Search_Items'));
+
+// console.log(data);
+
+</script>
